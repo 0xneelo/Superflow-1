@@ -1,0 +1,174 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % For math environments
+\usepackage{amsfonts} % For math fonts
+\usepackage{amssymb} % For math symbols
+\usepackage{graphicx} % To include graphics
+\usepackage{hyperref} % For hyperlinks
+\usepackage[margin=1in]{geometry} % Page margins
+\usepackage{parskip} % Paragraph spacing instead of indent
+\usepackage{url} % For typesetting URLs
+\usepackage{siunitx} % For formatting numbers (e.g., 10,000,000)
+
+\sisetup{group-separator={,}, group-minimum-digits=4}
+
+\title{Section 2 - Mathematical Model: Insider Advantage at Token Launch}
+% \author{}
+\date{April 2024}
+
+\begin{document}
+% \maketitle % Uncomment to display title
+
+\section{Step 1: Setup the Timeline and Market Participants}
+
+\subsection*{Time Definitions}
+\begin{itemize}
+    \item \textbf{$t_0$}: Token launch (exact moment token becomes tradable)
+    \item \textbf{$t_0 + \delta$}: Insider trading window ($\delta = 1$ to 10 minutes)
+        \begin{itemize}
+            \item Only insiders or informed actors know exactly when, where, and which token will launch
+        \end{itemize}
+    \item \textbf{$t_0 + N$}: General market awareness and public participation starts ($N \gg \delta$)
+\end{itemize}
+
+\subsection*{Market Participants}
+\begin{enumerate}
+    \item \textbf{Insiders (I)}
+        \begin{itemize}
+            \item Know token identity
+            \item Know launch exact time ($t_0$)
+            \item Know initial demand (D)
+        \end{itemize}
+    \item \textbf{Outsiders (O)}
+        \begin{itemize}
+            \item Uncertain token identity/time
+            \item Participate at $t_0 + N$
+        \end{itemize}
+\end{enumerate}
+
+\section{Step 2: Define Insider Advantage Formally}
+
+\subsection{Advantage 1: Time (First-Mover Advantage)}
+
+Insiders can buy exactly at $t_0 + \delta$, while outsiders can only enter at $t_0 + N$.
+
+Assume:
+\begin{itemize}
+    \item Initial price at launch: $P(t_0)$
+    \item Price rises to $P(t_0 + N)$ due to insider demand
+\end{itemize}
+
+\textbf{Profit for insiders ($G_a$):}
+\[
+G_a = Q_a \cdot [P(t_0 + N) - P(t_0 + \delta)]
+\]
+where $Q_a$ is insider's quantity bought at lower prices.
+
+\subsection{Advantage 2: Certainty of Information (Confidence)}
+
+Insiders accurately predict:
+\begin{itemize}
+    \item Token legitimacy (which token is real)
+    \item Amount of capital other insiders will deploy
+    \item Expected initial price rise due to insider demand
+\end{itemize}
+
+\textbf{Expected Utility Functions:}
+
+Insider expected utility:
+\[
+E[U_a] = Q_a \cdot [P(t_0 + N) - P(t_0 + \delta)] \cdot (1 - \rho_a)
+\]
+where $\rho_a$ is insiders' perceived risk (very low).
+
+Outsider expected utility:
+\[
+E[U_o] = Q_o \cdot [P(t_0 + N') - P(t_0 + N)] \cdot (1 - \rho_o)
+\]
+where:
+\begin{itemize}
+    \item $Q_o \ll Q_a$: Outsiders typically buy smaller amounts initially (due to uncertainty)
+    \item $\rho_o \gg \rho_a$: Outsiders perceive greater risk due to lack of insider certainty
+    \item $N' > N$: Outsiders wait additional confirmation periods
+\end{itemize}
+
+\section{Step 3: Empirical Example: Libra Launch Scenario}
+
+\subsection*{Hypothetical Example: Libra Token}
+\begin{enumerate}
+    \item Launch price at $t_0$ (exact insider launch): \$0.01
+    \item Insiders enter aggressively within 1-10 minutes
+    \item Price at $t_0 + 10$ mins rises to \$0.05$ due to insider demand
+    \item Public enters at $t_0 + 1$ hour, price rises to \$0.10
+\end{enumerate}
+
+\subsection*{Profit Calculations}
+
+\textbf{Insiders' Gain:}
+\begin{itemize}
+    \item $Q_a = \num{10000000}$ tokens at average price \$0.02$
+    \item Cost: $\num{10000000} \times \$0.02 = \$\num{200000}$
+    \item Value at public entry: $\num{10000000} \times \$0.10 = \$\num{1000000}$
+    \item Profit $G_a = \$\num{1000000} - \$\num{200000} = \$\num{800000}$
+\end{itemize}
+
+\textbf{Outsiders' Gain:}
+\begin{itemize}
+    \item $Q_o = \num{1000000}$ tokens at price \$0.10$
+    \item Cost: $\num{1000000} \times \$0.10 = \$\num{100000}$
+    \item Value shortly after: $\num{1000000} \times \$0.08 = \$\num{80000}$
+    \item Loss $G_o = \$\num{80000} - \$\num{100000} = -\$\num{20000}$
+\end{itemize}
+
+\section{Step 4: Statistical Confidence Advantage}
+
+\subsection*{Confidence Factors}
+\begin{itemize}
+    \item Insiders: $CF_a = (1 - \rho_a) \approx 0.99$ (high confidence)
+    \item Outsiders: $CF_o = (1 - \rho_o) \approx 0.5$ (low confidence)
+\end{itemize}
+
+\subsection*{Position Sizing}
+
+Insiders size aggressively:
+\[
+Q_a = CF_a \cdot C_a \quad (\text{very large quantity})
+\]
+Outsiders size conservatively:
+\[
+Q_o = CF_o \cdot C_o \quad (\text{much smaller})
+\]
+Therefore: $Q_a \gg Q_o$
+
+\section{Step 5: Generalization and Formalization of Advantage}
+
+\subsection*{Profit Functions}
+
+\textbf{Insider profit function:}
+\[
+G_a(Q_a, t_0 + \delta) = Q_a \cdot [E(P(t_0 + N)) - P(t_0 + \delta)], \quad Q_a \gg 0
+\]
+\textbf{Outsider profit function:}
+\[
+G_o(Q_o, t_0 + N) = Q_o \cdot [E(P(t_0 + N')) - P(t_0 + N)], \quad Q_o \ll Q_a
+\]
+
+\subsection*{Profitability Inequality}
+\[
+G_a(Q_a, t_0 + \delta) \gg G_o(Q_o, t_0 + N)
+\]
+
+\section*{Conclusion}
+
+This mathematical approach demonstrates that isolated crypto token launches significantly favor insiders due to two fundamental structural advantages:
+
+\begin{enumerate}
+    \item \textbf{Timing advantage}: Ability to trade immediately at $t_0$
+    \item \textbf{Confidence advantage}: Certainty of legitimacy, timing, and expected demand
+\end{enumerate}
+
+These advantages systematically enable insiders to profit at the expense of outsiders, who typically bear the cost of entering later at higher prices or after price peaks.
+
+This formal proof highlights the need for innovative financial instruments, like your proposed Omni-Solver, that neutralize these informational asymmetries by providing fair & accessible derivatives for broader market participation.
+
+\end{document} 

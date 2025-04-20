@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % For math environments
+\usepackage{amsfonts} % For math fonts
+\usepackage{amssymb} % For math symbols
+\usepackage{graphicx} % To include graphics
+\usepackage{hyperref} % For hyperlinks
+\usepackage[margin=1in]{geometry} % Page margins
+\usepackage{parskip} % Paragraph spacing instead of indent
+\usepackage{url} % For typesetting URLs
+\usepackage{tabularx} % For tables
+\usepackage{booktabs} % For better table lines
+
+\title{Section 1 - Mathematical Proof Outline}
+% \author{}
+\date{April 2024}
+
+\begin{document}
+% \maketitle % Uncomment to display title
+
+\section{Step 1: Define Market Participants and Information Sets}
+
+\subsection*{Participants:}
+\begin{itemize}
+    \item \textbf{Insiders (I)}: Possess advanced information at time $t_0$
+    \item \textbf{Outsiders (O)}: Receive information at time $t_0 + N$
+\end{itemize}
+
+\subsection*{Information Set:}
+\begin{itemize}
+    \item Let $I(t)$ represent information available at time $t$
+    \item Insiders have $I(t_0)$, while outsiders only have $I(t_0 + N)$
+\end{itemize}
+
+\section{Step 2: Information Asymmetry Opportunity (Economic Model)}
+
+Consider a simplified asset price model, where the price at any time $t$ is:
+\[
+P(t) = P(t_0) + \alpha \cdot I(t) + \epsilon_t
+\]
+Where:
+\begin{itemize}
+    \item $P(t_0)$ is the initial price
+    \item $\alpha$ measures the price impact of information
+    \item $\epsilon_t$ is a random noise component, $\epsilon_t \sim \mathcal{N}(0, \sigma^2)$
+\end{itemize}
+
+\subsection*{Economical Gain for Insiders ($G_a$):}
+Insiders trade at $t_0$:
+\[
+G_a = E[P(t) - P(t_0) | I(t_0)] = \alpha \cdot I(t_0)
+\]
+
+\subsection*{Economical Gain for Outsiders ($G_o$):}
+Outsiders trade at $t_0 + N$:
+\[
+G_o = E[P(t') - P(t) | I(t)], \quad t' > t > t_0
+\]
+Since by definition, $I(t_0)$ is superior (earlier), we have:
+\[
+G_a > G_o
+\]
+Thus, insiders always have strictly greater expected gains due to information asymmetry.
+
+\section{Step 3: Game-Theoretical Nash Equilibrium}
+
+Model the game with two strategies:
+\begin{itemize}
+    \item \textbf{Ethical (E)}: Transparent & fair
+    \item \textbf{Unethical (U)}: Exploitative, maximizing personal gain
+\end{itemize}
+
+\subsection*{Payoff matrices ($\pi$) for Founders (F):}
+
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\toprule
+Founder   & Insider Behavior               & Outsider Behavior                \
+\midrule
+Ethical   & Low payoff                     & Low payoff                       \
+Unethical & High payoff (early exploitation) & Medium payoff (later market entry) \
+\bottomrule
+\end{tabularx}
+
+\subsection*{Rationality assumption (utility maximization):}
+\[
+U_F(U) > U_F(E)
+\]
+Due to early access and information asymmetry.
+
+Thus, Nash Equilibrium favors unethical behavior:
+
+Ethical strategy is strictly dominated by unethical strategy for insiders, given isolated market structure:
+\[
+U_F(U) \succ U_F(E)
+\]
+
+\section{Step 4: Structural Incentive for Unethical Behavior}
+
+Isolated spot markets allow infinite, zero-cost market creation ($C_{market} = 0$):
+
+Let expected profit from market creation be $G_a$:
+
+\subsection*{Insiders:}
+\[
+G_a = \alpha \cdot I(t_0) - C_{market} > 0
+\]
+
+\subsection*{Outsiders:}
+\[
+G_o = \alpha \cdot I(t_0 + N) - C_{market} \quad (t > t_0)
+\]
+Given $C_{market} = 0$ and $I(t_0) > I(t_0 + N)$, insiders consistently generate profit with no cost or risk:
+\[
+G_a \gg G_o
+\]
+
+\section{Step 5: Impact of Financial Instrument ("Omni-Solver")}
+
+Introduce an Omni-Solver to price perpetual derivatives fairly:
+
+\subsection*{Fair value price $F(t)$:}
+\[
+F(t) = P(t) + \beta \cdot V(t)
+\]
+where:
+\begin{itemize}
+    \item $V(t)$ is the fair-value premium derived from continuous open market participation
+    \item $\beta$ normalizes information asymmetry premium
+\end{itemize}
+
+Omni-Solver eliminates isolated information asymmetry opportunities ($G_a \approx G_o$):
+\[
+E[F(t_0) | I(t_0)] \approx E[F(t) | I(t)], \quad t \ge t_0
+\]
+This theoretically neutralizes insiders' asymmetric advantages, enforcing market fairness.
+
+\section*{Conclusion (Mathematical Justification)}
+
+Mathematically demonstrate that isolated spot markets structurally incentivize unethical insider behavior by formally showing:
+
+\begin{enumerate}
+    \item \textbf{Information Asymmetry}: Earlier market participation yields greater economical gains ($G_a > G_o$)
+    \item \textbf{Game-Theoretic Dominance}: Unethical behavior is rationally dominant due to immediate financial incentives
+    \item \textbf{Zero-Entry Cost Markets}: Incentivize repeated unethical behavior through minimal barriers
+    \item \textbf{Fairness via Financial Innovation}: The introduction of a tool like Omni-Solver theoretically equalizes expected returns and removes asymmetric insider advantages.
+\end{enumerate}
+
+\end{document} 

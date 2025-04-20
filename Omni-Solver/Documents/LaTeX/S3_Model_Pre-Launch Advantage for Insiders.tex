@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % For math environments
+\usepackage{amsfonts} % For math fonts
+\usepackage{amssymb} % For math symbols
+\usepackage{graphicx} % To include graphics
+\usepackage{hyperref} % For hyperlinks
+\usepackage[margin=1in]{geometry} % Page margins
+\usepackage{parskip} % Paragraph spacing instead of indent
+\usepackage{url} % For typesetting URLs
+\usepackage{siunitx} % For formatting numbers
+
+\sisetup{group-separator={,}, group-minimum-digits=4}
+
+\title{Section 3 - Extended Mathematical Model: Pre-Launch Advantage for Insiders}
+% \author{}
+\date{April 2024}
+
+\begin{document}
+% \maketitle % Uncomment to display title
+
+\section{Section 3 - Extended Mathematical Model: Pre-Launch Advantage for Insiders}
+\subsection{Step 0: Define Pre-Launch Time ($t_{-n}$)}
+
+\textbf{$t_{-n}$}: The period before token launch ($t_0$), where insiders have exclusive knowledge of:
+
+\begin{itemize}
+    \item Exact token details (identity, contract address, legitimacy)
+    \item Exact timing of launch (precise $t_0$)
+    \item Expected demand and anticipated token appreciation post-launch
+\end{itemize}
+
+Insiders use this period for strategic preparation.
+
+\section{Step 1: Insider Advantage during Pre-launch ($t_{-n}$)}
+
+Insiders gain two distinct advantages in the pre-launch period:
+
+\subsection{Advantage A: Financial Preparation}
+
+Insiders allocate significant capital beforehand.
+
+Define $C_a$ as the amount of capital insiders prepare at $t_{-n}$:
+\[
+C_a(t_{-n}) \gg 0
+\]
+
+\subsection{Advantage B: Psychological Advantage (Reduced Stress & Increased Rationality)}
+
+Insiders experience lower psychological stress due to certainty and preparation.
+
+\begin{itemize}
+    \item Rationality factor ($R_a \approx 1$): Insiders behave near-optimally
+    \item Thus, insiders' expected decision quality at launch is optimal:
+\end{itemize}
+\[
+E[D_a(t_0)] \approx \text{Optimal}
+\]
+
+\section{Step 2: Outsider Disadvantage (Surprise and FOMO)}
+
+Outsiders discover the token at time $t_0 + N$, and face:
+
+\subsection*{No Pre-launch Preparation}
+
+Capital available is uncertain and limited at the moment of discovery:
+\[
+C_o(t_0 + N) \ll C_a(t_{-n})
+\]
+
+\subsection*{Psychological Distress (Surprise & FOMO)}
+
+\begin{itemize}
+    \item Rationality factor ($R_o \ll 1$): Outsiders behave suboptimally due to stress, panic buying (FOMO), and irrational decision-making
+    \item Thus, outsiders' expected decision quality is poor:
+\end{itemize}
+\[
+E[D_o(t_0 + N)] \ll \text{Optimal}
+\]
+
+\section{Step 3: Formalizing FOMO and Irrationality}
+
+Define a behavioral utility function that incorporates psychological stress:
+
+\subsection*{Insider Behavioral Utility ($U_a$)}
+\[
+U_a = R_a \cdot (Q_a \cdot [P(t_0 + N) - P(t_0 + \delta)])
+\]
+where:
+\begin{itemize}
+    \item $R_a \approx 1$ (rational decision-making)
+    \item $Q_a$ is capital deployed (highly optimal)
+\end{itemize}
+
+\subsection*{Outsider Behavioral Utility ($U_o$)}
+\[
+U_o = R_o \cdot (Q_o \cdot [P(t_0 + N') - P(t_0 + N)])
+\]
+where:
+\begin{itemize}
+    \item $R_o \ll 1$ (suboptimal decisions)
+    \item $Q_o$ is irrationally deployed capital due to FOMO
+\end{itemize}
+
+Given the psychological factor, we observe clearly:
+\[
+U_a \gg U_o
+\]
+
+\section{Step 4: Real-world Example (Libra Launch Revisited)}
+
+\subsection*{Insiders}
+
+\textbf{Pre-launch preparation ($t_{-n}$):}
+\begin{itemize}
+    \item Calm, informed, allocated \$\num{1000000}$ ready to deploy instantly at launch
+    \item Rationality factor $R_a = 0.99$
+\end{itemize}
+
+\subsection*{Outsiders}
+
+\textbf{Discovery at $t_0 + N$ (e.g., 1 hour post-launch):}
+\begin{itemize}
+    \item Unprepared, stressed, FOMO-driven
+    \item Panic-buying with only \$\num{50000}$ accessible instantly, at inflated price
+    \item Rationality factor $R_o = 0.4$
+\end{itemize}
+
+\subsection*{Utility Comparison}
+
+\textbf{Insiders:}
+\[
+U_a = 0.99 \times (\$\num{1000000} \times [0.10 - 0.02]) = \$\num{792000}
+\]
+\textbf{Outsiders:}
+\[
+U_o = 0.4 \times (\$\num{50000} \times [0.08 - 0.10]) = -\$\num{400}
+\]
+
+\section{Step 5: Integrating into the Timeline (Extended)}
+
+\subsection*{Updated Comprehensive Timeline}
+
+\begin{enumerate}
+    \item \textbf{$t_{-n}$}: Insider exclusive preparation period (financial/psychological advantage)
+    \item \textbf{$t_0$}: Token launch (tradable publicly, insiders instantly participate)
+    \item \textbf{$t_0 + \delta$}: Insider exclusive trading window (1-10 min)
+    \item \textbf{$t_0 + N$}: Public awareness begins; outsiders react irrationally (FOMO)
+\end{enumerate}
+
+\subsection*{Formal Comprehensive Insider Advantage}
+
+\begin{enumerate}
+    \item \textbf{Financial capital:}
+        \[ C_a(t_{-n}) \gg C_o(t_0 + N) \]
+    \item \textbf{Rationality/optimality:}
+        \[ R_a(t_{-n}) \gg R_o(t_0 + N) \]
+\end{enumerate}
+
+Thus, insiders possess overwhelming structural advantages mathematically proven to facilitate unethical behavior.
+
+\section*{Conclusion}
+
+Explicitly including pre-launch preparation mathematically emphasizes insiders' advantages in terms of:
+
+\begin{enumerate}
+    \item \textbf{Capital availability}
+    \item \textbf{Mental preparation and rational decision-making}
+\end{enumerate}
+
+This structural inequity intensifies the already-existing informational asymmetries, systematically disadvantaging outsiders and incentivizing unethical insider strategies.
+
+Your proposed solution (Omni-Solver) could theoretically neutralize this pre-launch advantage by offering transparent derivatives and eliminating the necessity for insider-only knowledge and preparation.
+
+\end{document} 
